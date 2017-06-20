@@ -39,9 +39,9 @@
 		<li><input type="radio" name="gender" value="male" checked> Male</li>
 		<input type="radio" name="gender" value="female"> Female<br>
 		<li>Language:</li>
-		<select>
-			<option value="language">English</option>
-			<option value="language">Chinese</option>
+		<select id="language">
+			<option value="English">English</option>
+			<option value="Chinese">Chinese</option>
 		</select>
 		<li>Budeget in US dollars:</li>
 		<input type="text" id="budget"><br>
@@ -53,17 +53,37 @@
 </template>
 
 <template name="peoplerow">
-  {{person.name}}--{{person.place}}--${{person.budget}}
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  <tr>
+  	<td>{{person.name}}</td>
+		<td>{{person.place}}</td>
+		<td>${{person.budget}}</td>
+		<td>{{person.language}}</td>
+		<td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+  </tr>
+
 </template>
 
 <template name="showpeople">
 	{{#if currentUser}}
-	<ul>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Destination</th>
+				<th>Budget</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each p in peopleData}}
+			{{> peoplerow person=p}}
+			{{/each}}
+		</tbody>
+	</table>
+	<!-- <ul>
 		{{#each p in peopleData}}
 			<li>{{> peoplerow person=p}}</li>
 		{{/each}}
-	</ul>
+	</ul> -->
 	{{else}}
 	<h1>You must login to see information</h1>
 	{{/if}}
