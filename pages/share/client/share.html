@@ -1,0 +1,46 @@
+<template name="share">
+
+  <div class="jumbotron">
+    <h1>Share your wonderful tour</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-5 jumbotron">
+      {{> addfeedback}}
+    </div>
+
+    <div class="col-md-6 col-md-offset-1 jumbotron">
+      {{> showfeedback}}
+    </div>
+  </div>
+
+  <nav aria-label="...">
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+</template>
+
+<template name="addfeedback">
+  Select your favorite color:
+  <input type="color" name="favcolor"><br>
+  Please enter your title:<br>
+  <input type="text" id="title"><br>
+  Share your tour with us:<br>
+  <textarea id="content" rows="3" cols="30"></textarea><br>
+  <button class="btn btn-primary btn-sm" id="addfeedback">Share</button>
+</template>
+
+<template name="feedbackrow">
+  <strong><em>{{fb.title}}</em></strong><br>{{fb.content}}
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+</template>
+
+<template name="showfeedback">
+  <h2>Feedbacks:</h2>
+  <ul>
+    {{#each f in feedbackData}}
+    <li>{{> feedbackrow fb=f}}</li>
+    {{/each}}
+  </ul>
+</template>
