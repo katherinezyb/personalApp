@@ -1,34 +1,39 @@
 <template name="share">
 
-  <div class="jumbotron">
-    <h1>Share your wonderful tour</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-5 jumbotron">
-      {{> addfeedback}}
-    </div>
+  <div id="feedback">
+    <center><h2>We Value Your Feedback</h2></center><hr>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1 box">
+        {{> addfeedback}}
+      </div>
 
-    <div class="col-md-6 col-md-offset-1 jumbotron">
-      {{> showfeedback}}
+      <div class="col-md-5 col-md-offset-1 box">
+        {{> showfeedback}}
+      </div>
     </div>
   </div>
 
-  <nav aria-label="...">
+
+  <!-- <nav aria-label="...">
   <ul class="pager">
     <li><a href="#">Previous</a></li>
     <li><a href="#">Next</a></li>
   </ul>
-</nav>
+</nav> -->
 </template>
 
 <template name="addfeedback">
-  Select your favorite color:
-  <input type="color" name="favcolor"><br>
-  Please enter your title:<br>
-  <input type="text" id="title"><br>
-  Share your tour with us:<br>
-  <textarea id="content" rows="3" cols="30"></textarea><br>
-  <button class="btn btn-primary btn-sm" id="addfeedback">Share</button>
+  <div class="words">
+    <h3>Share your trip:</h3>
+    Select your favorite color:
+    <input type="color" name="favcolor"><br>
+    Please enter your title:<br>
+    <input type="text" id="title"><br>
+    Share your tour with us:<br>
+    <textarea id="content" rows="3" cols="30" ></textarea><br>
+    <input type="checkbox" id="agree" > I agree to publish my feedback to the public.<br>
+    <button class="btn btn-primary btn-sm" id="addfeedback">Share</button>
+  </div>
 </template>
 
 <template name="feedbackrow">
@@ -37,10 +42,12 @@
 </template>
 
 <template name="showfeedback">
-  <h2>Feedbacks:</h2>
-  <ul>
-    {{#each f in feedbackData}}
-    <li>{{> feedbackrow fb=f}}</li>
-    {{/each}}
-  </ul>
+  <div class="words">
+    <h3>Feedbacks:</h3>
+    <ul class="list">
+      {{#each f in feedbackData}}
+      <li>{{> feedbackrow fb=f}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

@@ -16,10 +16,22 @@ Template.addfeedback.events({
     console.log('adding '+title);
     instance.$('#title').val("");
     instance.$('#content').val("");
-    Feedback.insert({title:title,content:content,
-      owner:Meteor.userId(),
-      createAt:new Date()});
-    //People.insert({name,birthyear})
+
+    var x = document.getElementById('agree');
+    if (x.checked){
+      Feedback.insert({title:title,content:content,
+        owner:Meteor.userId(),
+        createAt:new Date()});
+    }else{
+      alert("You must agree to publish your feedback.")
+    }
+
+    var trip = {
+      title:title,
+      content:content,
+      owner:Meteor.userId()
+    };
+    Meteor.call('trip.insert',trip);
   }
 })
 
@@ -31,12 +43,14 @@ Template.feedbackrow.helpers({
 Template.feedbackrow.events({
   'click span'(elt,instance){
     console.dir(this);
+    console.log(this);
     console.log(this.fb._id);
-    if(this.fb.owner==Meteor.userId()){
-      Feedback.remove(this.fb._id);
-    }else{
-      alert("Why are you deleting someone else's feedback");
-    }
+    Meteor.call('trip.remove',this.fb)
+    // if(this.fb.owner==Meteor.userId()){
+    //   Feedback.remove(this.fb._id);
+    // }else{
+    //   alert("Why are you deleting someone else's feedback");
+    // }
   }
 })
 

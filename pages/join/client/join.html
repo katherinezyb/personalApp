@@ -1,0 +1,77 @@
+<template name="join">
+  <div id="joinus">
+    <center><h2>Add Your Profile</h2></center><hr>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-1 box">
+        {{> addpeople}}
+      </div>
+
+      <div class="col-md-5 col-md-offset-1 box">
+        {{> showpeople}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="addpeople">
+	<center><h3>Join Us Now</h3></center>
+	<ul>
+		<li>Name:</li>
+		<input type="text" id="name">
+		<li>Date of Birth:</li>
+		<input type="date" name="bday"><br>
+		<li><input type="radio" name="gender" value="male" checked> Male</li>
+		<input type="radio" name="gender" value="female"> Female<br>
+		<li>Language:</li>
+		<select id="language">
+			<option value="English">English</option>
+			<option value="Chinese">Chinese</option>
+		</select>
+		<li>Budeget in US dollars:</li>
+		<input type="text" id="budget"><br>
+		<li>Destination:</li>
+		<input type="text" id="place">
+	</ul>
+  <hr>
+	<button class="btn btn-danger btn-lg" id="addpeople">Submit</button>
+</template>
+
+<template name="peoplerow">
+  <tr>
+  	<td>{{person.name}}</td>
+		<td>{{person.place}}</td>
+		<td>${{person.budget}}</td>
+		<td>{{person.language}}</td>
+		<td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+  </tr>
+
+</template>
+
+<template name="showpeople">
+	{{#if currentUser}}
+  <center><h3>Travelers Book</h3></center>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+        <th>Gender</th>
+				<th>Destination</th>
+				<th>Budget</th>
+        <th>Language</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each p in peopleData}}
+			{{> peoplerow person=p}}
+			{{/each}}
+		</tbody>
+	</table>
+	<!-- <ul>
+		{{#each p in peopleData}}
+			<li>{{> peoplerow person=p}}</li>
+		{{/each}}
+	</ul> -->
+	{{else}}
+	<center><h3>Sorry, you need to sign in to see info!</h3></center>
+	{{/if}}
+</template>

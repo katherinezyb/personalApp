@@ -1,0 +1,46 @@
+body{
+  background-color: #7B9CC3;
+}
+div#start{
+  height: 700px;
+  background-image: url(images/earth4.jpg);
+  background-size: 100% 100%;
+  padding: 10px;
+}
+div#joinus{
+  height: 700px;
+  background-image: url(images/galaxy2.jpg);
+  background-size: 100% 100%;
+  padding: 10px;
+}
+h1{
+  font-family: Snell Roundhand, cursive;
+}
+h2{
+  font-family: fantasy;
+  color: #D0F3F6;
+}
+h3{
+  font-family: Chalkduster, fantasy;
+}
+div#feedback{
+  height: 700px;
+  background-image: url(images/space.jpg);
+  background-size: 100% 100%;
+  padding: 10px;
+}
+div.box{
+  height: 500px;
+  background-color: rgba(255,255,255,0.4);
+}
+
+div.words{
+  color: snow;
+}
+
+textarea{
+  color: black;
+}
+#title{
+  color: black;
+}
