@@ -12,7 +12,9 @@ div#joinus{
   background-image: url(images/galaxy2.jpg);
   background-size: 100% 100%;
   padding: 10px;
+
 }
+
 h1{
   font-family: Snell Roundhand, cursive;
 }
@@ -31,11 +33,7 @@ div#feedback{
 }
 div.box{
   height: 500px;
-  background-color: rgba(255,255,255,0.4);
-}
-
-div.words{
-  color: snow;
+  background-color: rgba(255,255,255,0.5);
 }
 
 textarea{
@@ -44,3 +42,39 @@ textarea{
 #title{
   color: black;
 }
+
+.flex {
+        /* basic styling */
+        width: 800px;
+        height: 50px;
+        border: 1px solid navy;
+        font: 20px fantasy;
+
+        /* flexbox setup */
+        display: flex;
+        flex-direction: row;
+    }
+
+.flex > div {
+        flex: 1 1 auto;
+        width: 80px; /* To make the transition work nicely. (Transitions to/from
+                        "width:auto" are buggy in Gecko and Webkit, at least.
+                        See http://bugzil.la/731886 for more info.) */
+        transition: width 0.7s ease-out;
+    }
+
+    /* colors */
+    .flex > div:nth-child(1){ background: #CC81F2; }
+    .flex > div:nth-child(2){ background: red; }
+    .flex > div:nth-child(3){ background: #79F9EC; }
+    .flex > div:nth-child(4){ background: gold; }
+    .flex > div:nth-child(5){ background: green; }
+    .flex > div:nth-child(6){ background: #CD0C0C; }
+    .flex > div:nth-child(7){ background: orange; }
+    .flex > div:nth-child(8){ background: white; }
+    .flex > div:nth-child(9){ background: #1218CB; }
+    .flex > div:nth-child(10){ background: #5FD5F9; }
+
+    .flex > div:hover {
+        width: 200px;
+    }

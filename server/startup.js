@@ -24,8 +24,8 @@
 Meteor.startup(() => {
   // code to run on server at startup
   People.remove({});  // clear the database
-  People.insert({name:'Tim',place:"USA",budget:1000});
-  People.insert({name:'Caitlin',place:"England",budget:2000});
+  People.insert({name:'Tim',gender:'male',place:"USA",budget:1000,language:'English'});
+  People.insert({name:'Caitlin',gender:'female',place:"England",budget:2000,language:'English'});
 
 	Feedback.remove({});
 	Feedback.insert({title:"London trip",content:"I went to Europe and GlobalTour really gave me a lot of help!"});

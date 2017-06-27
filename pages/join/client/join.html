@@ -20,8 +20,9 @@
 		<input type="text" id="name">
 		<li>Date of Birth:</li>
 		<input type="date" name="bday"><br>
-		<li><input type="radio" name="gender" value="male" checked> Male</li>
-		<input type="radio" name="gender" value="female"> Female<br>
+		<li>Gender: <input type="radio" name="gender" value="male" checked> Male
+		<input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other</li>
 		<li>Language:</li>
 		<select id="language">
 			<option value="English">English</option>
@@ -39,6 +40,7 @@
 <template name="peoplerow">
   <tr>
   	<td>{{person.name}}</td>
+    <td>{{person.gender}}</td>
 		<td>{{person.place}}</td>
 		<td>${{person.budget}}</td>
 		<td>{{person.language}}</td>

@@ -13,25 +13,23 @@ Template.addfeedback.events({
   'click button'(elt,instance){
     const title = instance.$('#title').val();
     const content = instance.$('#content').val();
-    console.log('adding '+title);
-    instance.$('#title').val("");
-    instance.$('#content').val("");
-
-    var x = document.getElementById('agree');
-    if (x.checked){
-      Feedback.insert({title:title,content:content,
-        owner:Meteor.userId(),
-        createAt:new Date()});
-    }else{
-      alert("You must agree to publish your feedback.")
-    }
-
     var trip = {
       title:title,
       content:content,
       owner:Meteor.userId()
     };
-    Meteor.call('trip.insert',trip);
+
+    var x = document.getElementById('agree');
+    if (x.checked){
+      Meteor.call('trip.insert',trip);
+      console.log('adding '+title);
+      instance.$('#title').val("");
+      instance.$('#content').val("");
+      $('input:checkbox').removeAttr('checked');
+    }else{
+      alert("You must agree to publish your feedback.")
+    }
+
   }
 })
 
