@@ -45,10 +45,11 @@ textarea{
 
 .flex {
         /* basic styling */
-        width: 800px;
-        height: 50px;
+        margin: auto;
+        width: 1200px;
+        height: 400px;
         border: 1px solid navy;
-        font: 20px fantasy;
+        font: 30px  fantasy ;
 
         /* flexbox setup */
         display: flex;
@@ -64,17 +65,17 @@ textarea{
     }
 
     /* colors */
-    .flex > div:nth-child(1){ background: #CC81F2; }
-    .flex > div:nth-child(2){ background: red; }
-    .flex > div:nth-child(3){ background: #79F9EC; }
-    .flex > div:nth-child(4){ background: gold; }
-    .flex > div:nth-child(5){ background: green; }
-    .flex > div:nth-child(6){ background: #CD0C0C; }
-    .flex > div:nth-child(7){ background: orange; }
-    .flex > div:nth-child(8){ background: white; }
-    .flex > div:nth-child(9){ background: #1218CB; }
-    .flex > div:nth-child(10){ background: #5FD5F9; }
+    .flex > div:nth-child(1){ background: url(images/paris.jpg); }
+    .flex > div:nth-child(2){ background: url(images/china.jpg); }
+    .flex > div:nth-child(3){ background: url(images/maldives.jpg); }
+    .flex > div:nth-child(4){ background: url(images/spain.jpg); }
+    .flex > div:nth-child(5){ background: url(images/italy.jpg); }
+    .flex > div:nth-child(6){ background: url(images/japan.jpg); }
+    .flex > div:nth-child(7){ background: url(images/uk.jpg); }
+    .flex > div:nth-child(8){ background: url(images/alaska.jpg); }
+    .flex > div:nth-child(9){ background: url(images/norway.jpg); }
+    .flex > div:nth-child(10){ background: url(images/cancun.jpg); }
 
     .flex > div:hover {
-        width: 200px;
+        width: 600px;
     }
