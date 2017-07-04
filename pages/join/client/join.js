@@ -53,3 +53,7 @@ Template.peoplerow.events({
 Template.showpeople.helpers({
   peopleData() {return People.find()},
 })
+
+Template.showpeople.onCreated(function(){
+  Meteor.subscribe('people');
+})

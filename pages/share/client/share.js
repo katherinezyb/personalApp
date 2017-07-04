@@ -55,3 +55,7 @@ Template.feedbackrow.events({
 Template.showfeedback.helpers({
   feedbackData() {return Feedback.find()},
 })
+
+Template.showfeedback.onCreated(function(){
+  Meteor.subscribe('feedback');
+})

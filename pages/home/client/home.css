@@ -62,6 +62,7 @@ textarea{
                         "width:auto" are buggy in Gecko and Webkit, at least.
                         See http://bugzil.la/731886 for more info.) */
         transition: width 0.7s ease-out;
+        height: auto;
     }
 
     /* colors */
