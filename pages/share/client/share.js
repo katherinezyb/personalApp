@@ -31,6 +31,7 @@ Template.addfeedback.events({
     }
 
   }
+
 })
 
 Template.feedbackrow.helpers({
@@ -49,6 +50,13 @@ Template.feedbackrow.events({
     // }else{
     //   alert("Why are you deleting someone else's feedback");
     // }
+  }
+
+})
+
+Template.feedbackrow.events({
+  'click button'(elt,instance){
+      Meteor.call('trip.update',this.fb,"The content is hidden by the author")
   }
 })
 
