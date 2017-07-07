@@ -30,3 +30,4 @@ underscore@1.0.10
 reactive-dict@1.1.8
 shell-server
 google-config-ui
+reactive-var

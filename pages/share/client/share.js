@@ -58,13 +58,14 @@ Template.feedbackrow.events({
   // 'click button'(elt,instance){
   //     Meteor.call('trip.update',this.fb,"The content is hidden by the author")
   // }
-  // 'click #edit'(event,instance){
-  //   instance.edit.set(true);
-  // },
+  'click #edit'(event,instance){
+    instance.edit.set(true);
+  },
   'click #update'(elt,instance){
     const newContent = instance.$('#newContent').val();
     instance.$('#newContent').val("");
     Meteor.call('trip.update',this.fb,newContent);
+    instance.edit.set(false);
   }
 })
 
@@ -76,15 +77,11 @@ Template.showfeedback.onCreated(function(){
   Meteor.subscribe('feedback');
 })
 
-// Template.feedbackrow.onCreated(function(){
-//   this.edit = new ReactiveVar(false);
-// })
-// Template.feedbackrow.helpers({
-//   editButton(){
-//     if (Template.instance.edit.get()){
-//       return true;
-//     }else{
-//       return false;
-//     }
-//   }
-// })
+Template.feedbackrow.onCreated(function(){
+  this.edit = new ReactiveVar(false);
+})
+Template.feedbackrow.helpers({
+  editButton(){
+    return Template.instance().edit.get();
+  }
+})
