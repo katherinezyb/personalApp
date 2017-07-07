@@ -1,7 +1,36 @@
-div#nav{
-  width: 100%;
-	float: left;
-	margin: 0 0 1em 0;
-	padding: 0;}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 10px gray;
+}
 
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Over the Rainbow';
+    font-size: 22px;
+}
+
+ul.topnav li a:hover {
+    background-color: white;
+    color: Aquamarine;
+  ;
+}
+
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
 }

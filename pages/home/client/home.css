@@ -1,29 +1,21 @@
-body{
+/*body{
   background-color: #7B9CC3;
+}*/
+body{
+  font-family: monospace;
 }
-div#start{
-  height: 700px;
-  background-image: url(images/earth4.jpg);
+.page{
+  padding-top: 2cm;
+}
+.home {
+  height: 800px;
+  background-image: url(images/aurora.jpg);
   background-size: 100% 100%;
   padding: 10px;
-}
-div#joinus{
-  height: 700px;
-  background-image: url(images/galaxy2.jpg);
-  background-size: 100% 100%;
-  padding: 10px;
-
-}
-
-h1{
-  font-family: Snell Roundhand, cursive;
-}
-h2{
-  font-family: fantasy;
-  color: #D0F3F6;
+  padding-top: 2cm;
 }
 h3{
-  font-family: Chalkduster, fantasy;
+  font-family:monospace;
 }
 div#feedback{
   height: 700px;
@@ -33,7 +25,8 @@ div#feedback{
 }
 div.box{
   height: 500px;
-  background-color: rgba(255,255,255,0.5);
+  /*background-color: snow;*/
+  /*rgba(255,255,255,0.5);*/
 }
 
 textarea{
@@ -68,10 +61,10 @@ textarea{
     }
 
     /* colors */
-    .flex > div:nth-child(1){ background: url(images/paris.jpg); }
-    .flex > div:nth-child(2){ background: url(images/china.jpg); }
+    .flex > div:nth-child(1){ background: url(images/paris.jpg);}
+    .flex > div:nth-child(2){ background: url(images/china.png); }
     .flex > div:nth-child(3){ background: url(images/maldives.jpg); }
-    .flex > div:nth-child(4){ background: url(images/spain.jpg); }
+    .flex > div:nth-child(4){ background: url(images/spain.png); }
     .flex > div:nth-child(5){ background: url(images/italy.jpg); }
     .flex > div:nth-child(6){ background: url(images/japan.jpg); }
     .flex > div:nth-child(7){ background: url(images/uk.jpg); }
@@ -136,4 +129,18 @@ textarea{
   margin: 0 auto;
   text-align: center;
   cursor: pointer;
+}
+
+h1.wish {
+  font-family: 'Amatica SC';
+  text-align: center;
+}
+
+.floating-box{
+  float: left;
+  width: 500px;
+  height: 400px;
+  margin-left: 150px;
+  background-color: snow;
+  padding: 10px;
 }

@@ -1,16 +1,14 @@
 <template name="join">
-  <div id="joinus">
-    <center><h2>Add Your Profile</h2></center><hr>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-1 box">
-        {{> addpeople}}
-      </div>
-
-      <div class="col-md-5 col-md-offset-1 box">
-        {{> showpeople}}
-      </div>
+  <div class="page">
+    <h1 class="wish">Welcome to the 'Traveler Galaxy'<br><br><img src="images/star.png" alt="star" height="150"></h1>
+    <div class="floating-box">
+      {{> addpeople}}
+    </div>
+    <div class="floating-box">
+      {{> showpeople}}
     </div>
   </div>
+
 </template>
 
 <template name="addpeople">
@@ -33,8 +31,7 @@
 		<li>Destination:</li>
 		<input type="text" id="place">
 	</ul>
-  <hr>
-	<button class="btn btn-danger btn-lg" id="addpeople">Submit</button>
+	<button style="margin-left:50px" class="btn btn-danger btn-sm" id="addpeople">Submit</button>
 </template>
 
 <template name="peoplerow">
@@ -44,7 +41,9 @@
 		<td>{{person.place}}</td>
 		<td>${{person.budget}}</td>
 		<td>{{person.language}}</td>
+    {{#if isOwner}}
 		<td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+    {{/if}}
   </tr>
 
 </template>
