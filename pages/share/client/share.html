@@ -1,12 +1,14 @@
 <template name="share">
   <div class="page">
     <h1 class="wish">We Value Your Feedback <br><br><img src="images/share.png" alt="icon" height="150"></h1>
-      <div class="floating-box">
-        {{> addfeedback}}
-      </div>
+      <div class="row">
+        <div class="col">
+          {{> addfeedback}}
+        </div>
 
-      <div class="floating-box">
-        {{> showfeedback}}
+        <div class="col">
+          {{> showfeedback}}
+        </div>
       </div>
   </div>
 

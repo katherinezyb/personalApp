@@ -1,37 +1,22 @@
 <template name="layout">
-  <ul class="topnav">
-    <li><a href="{{pathFor 'home'}}">Home</a></li>
-    <li><a href="{{pathFor 'join'}}">Join Us</a></li>
-    <li><a href="{{pathFor 'share'}}">Share</a></li>
-    <li><a href="{{pathFor 'category'}}">Category</a></li>
-    <li><a href="{{pathFor 'sponsors'}}">Sponsors</a></li>
-    
-  </ul>
-  <ul>
-    <li style="float:right">{{> loginButtons}}</li>
-  </ul>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <div>
+    <ul class="topnav">
+      <li><a href="{{pathFor 'home'}}">Home</a></li>
+      <li><a href="{{pathFor 'join'}}">Join Us</a></li>
+      <li><a href="{{pathFor 'share'}}">Share</a></li>
+      <li><a href="{{pathFor 'category'}}">Category</a></li>
+      <li><a href="{{pathFor 'sponsors'}}">Sponsors</a></li>
+
+    </ul>
+    <ul>
+      <li style="float:right">{{> loginButtons}}</li>
+    </ul>
+  </div>
+
   {{> yield}}
 
-
-  <!-- <h1><center>TOUR AURORA</center></h1>
-  <div id="nav">
-		<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-		    <div class="collapse navbar-collapse" id="navbar">
-		      	<ul class="nav navbar-nav">
-              <li><a href="{{pathFor 'home'}}">Home</a></li>
-              <li><a href="{{pathFor 'join'}}">Join Us</a></li>
-              <li><a href="{{pathFor 'share'}}">Share</a></li>
-							<li><a href="{{pathFor 'category'}}">Category</a></li>
-							<li><a href="{{pathFor 'sponsors'}}">Sponsors</a></li>
-						</ul>
-            <ul class="nav navbar-nav navbar-right">
-              {{> loginButtons}}
-  			    </ul>
-		    </div>
-		  </div>
-		</nav>
-    {{> yield}}
-	</div> -->
 
 </template>

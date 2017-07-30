@@ -1,12 +1,15 @@
 <template name="join">
   <div class="page">
     <h1 class="wish">Welcome to the 'Traveler Galaxy'<br><br><img src="images/star.png" alt="star" height="150"></h1>
-    <div class="floating-box">
-      {{> addpeople}}
+    <div class="row">
+      <div class="col">
+        {{> addpeople}}
+      </div>
+      <div class="col">
+        {{> showpeople}}
+      </div>
     </div>
-    <div class="floating-box">
-      {{> showpeople}}
-    </div>
+
   </div>
 
 </template>
